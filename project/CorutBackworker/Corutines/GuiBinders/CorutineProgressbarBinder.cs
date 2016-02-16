@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace CorutBackworker.Corutines.GuiBinders
+namespace CorutBackworker.Corutines
 {
     public class CorutineProgressbarBinder : CorutineWinformsBinder
     {
@@ -19,7 +19,10 @@ namespace CorutBackworker.Corutines.GuiBinders
                 //only for percentage report is capturesd
                 CorutineReportPercentage percRepo = report as CorutineReportPercentage;
                 ProgressBar bar = control as ProgressBar;
-                bar.Value = percRepo.percentage;
+                bar.Invoke((MethodInvoker)delegate()
+                {
+                    bar.Value = percRepo.percentage;
+                });
             }
         }
         public override void Init()

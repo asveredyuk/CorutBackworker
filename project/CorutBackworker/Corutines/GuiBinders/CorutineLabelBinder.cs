@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CorutBackworker.Corutines.GuiBinders
+namespace CorutBackworker.Corutines
 {
     public class CorutineLabelBinder : CorutineWinformsBinder
     {
@@ -27,7 +27,19 @@ namespace CorutBackworker.Corutines.GuiBinders
             {
                 CorutineReportText repotext = report as CorutineReportText;
                 Label label = control as Label;
-                label.Text = string.Format(pattern, repotext.message);
+                label.Invoke((MethodInvoker)delegate()
+                {
+                    label.Text = string.Format(pattern, repotext.message);
+                });
+            }
+            if (report is CorutineReportResult)
+            {
+                CorutineReportResult res = report as CorutineReportResult;
+                Label label = control as Label;
+                label.Invoke((MethodInvoker)delegate()
+                {
+                    label.Text = string.Format(pattern, res.result.ToString());
+                });
             }
         }
     }

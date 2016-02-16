@@ -21,18 +21,28 @@ namespace CorutBackworker.Corutines
         /// Thread, running in background
         /// </summary>
         private Thread thread;
+        /// <summary>
+        /// List of all binders
+        /// </summary>
+        public List<CorutineWinformsBinder> binders;
 
         public Corutine(IEnumerable<CorutineReport> rep)
         {
             corut = rep;
+            binders = new List<CorutineWinformsBinder>();
         }
-
+        /// <summary>
+        /// Cancel execution
+        /// </summary>
         public void Cancel()
         {
             if(cancel)
                 throw new Exception("already under cancellation");
             cancel = true;
         }
+        /// <summary>
+        /// Start execution
+        /// </summary>
         public void Start()
         {
             if(thread != null)
@@ -60,11 +70,18 @@ namespace CorutBackworker.Corutines
                 }
             }
         }
-
+        /// <summary>
+        /// Handle report, given from another thread
+        /// </summary>
+        /// <param name="report"></param>
         private void ProcessReport(CorutineReport report)
         {
-
+            foreach (var item in binders)
+            {
+                item.OnReport(report);
+            }
         }
+
         
     }
 }
