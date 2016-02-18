@@ -28,48 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btRun = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.beCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btRun
             // 
-            this.button1.Location = new System.Drawing.Point(739, 60);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btRun.Location = new System.Drawing.Point(487, 85);
+            this.btRun.Name = "btRun";
+            this.btRun.Size = new System.Drawing.Size(75, 23);
+            this.btRun.TabIndex = 0;
+            this.btRun.Text = "Run";
+            this.btRun.UseVisualStyleBackColor = true;
+            this.btRun.Click += new System.EventHandler(this.button1_Click);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(16, 60);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Location = new System.Drawing.Point(12, 49);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(715, 28);
+            this.progressBar1.Size = new System.Drawing.Size(634, 23);
             this.progressBar1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 117);
+            this.label1.Location = new System.Drawing.Point(42, 95);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
             // 
+            // beCancel
+            // 
+            this.beCancel.Location = new System.Drawing.Point(568, 85);
+            this.beCancel.Name = "beCancel";
+            this.beCancel.Size = new System.Drawing.Size(75, 23);
+            this.beCancel.TabIndex = 3;
+            this.beCancel.Text = "Cancel";
+            this.beCancel.UseVisualStyleBackColor = true;
+            this.beCancel.Click += new System.EventHandler(this.beCancel_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 321);
+            this.ClientSize = new System.Drawing.Size(658, 261);
+            this.Controls.Add(this.beCancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.btRun);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -79,9 +89,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btRun;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button beCancel;
     }
 }
 

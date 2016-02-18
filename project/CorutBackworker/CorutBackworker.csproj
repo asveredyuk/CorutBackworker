@@ -44,10 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Corutines\Binders\CorutineCancelledBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineCompletedBinder.cs" />
+    <Compile Include="Corutines\Binders\ICorutineBinder.cs" />
+    <Compile Include="Corutines\CorutineBase.cs" />
     <Compile Include="Corutines\Corutine.cs" />
-    <Compile Include="Corutines\GuiBinders\CorutineLabelBinder.cs" />
-    <Compile Include="Corutines\GuiBinders\CorutineProgressbarBinder.cs" />
-    <Compile Include="Corutines\GuiBinders\CorutineWinformsBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineLabelBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineProgressbarBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineWinformsBinder.cs" />
     <Compile Include="Corutines\reports\CorutineReport.cs" />
     <Compile Include="Corutines\reports\CorutineReportCancelled.cs" />
     <Compile Include="Corutines\reports\CorutineReportPercentage.cs" />

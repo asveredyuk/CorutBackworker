@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace CorutBackworker.Corutines
 {
-    public abstract class CorutineWinformsBinder
+    public abstract class CorutineWinformsBinder : ICorutineBinder
     {
         public Control control;
         public CorutineWinformsBinder(Control c)

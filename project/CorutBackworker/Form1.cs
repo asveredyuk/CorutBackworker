@@ -16,12 +16,23 @@ namespace CorutBackworker
         {
             InitializeComponent();
         }
-
+        Corutine corut;
         private void button1_Click(object sender, EventArgs e)
         {
-            Corutine corut = new Corutine(dumbCorut(2,100000));
-            corut.binders.Add(new CorutineProgressbarBinder(progressBar1));
-            corut.binders.Add(new CorutineLabelBinder(label1));
+            corut = new Corutine(this, dumbCorut(2, 100000));
+            //corut.binders.Add(new CorutineProgressbarBinder(progressBar1));
+            //corut.binders.Add(new CorutineLabelBinder(label1));
+            corut.BindLabel(label1);
+            corut.BindProgressBar(progressBar1);
+            corut.OnCompleted(delegate(object result)
+            {
+                List<int> results = result as List<int>;
+                MessageBox.Show(results.Count.ToString());
+            });
+            corut.OnCancelled(delegate
+            {
+                MessageBox.Show("process cancelled");
+            });
             corut.Start();
         }
         /// <summary>
@@ -41,8 +52,9 @@ namespace CorutBackworker
                 int len = to - from;
                 int progress = (i - from)*100 / len;
                 yield return new CorutineReportPercentage(progress);
+                yield return new CorutineReportText(string.Format("{0}% completed", progress));
             }
-            yield return new CorutineReportResult(results.Count);
+            yield return new CorutineReportResult(results);
         }
         public bool checkIsSimple(int a)
         {
@@ -52,6 +64,14 @@ namespace CorutBackworker
                     return false;
             }
             return true;
+        }
+
+        private void beCancel_Click(object sender, EventArgs e)
+        {
+            if(corut != null)
+            {
+                corut.Cancel();
+            }
         }
 
     }

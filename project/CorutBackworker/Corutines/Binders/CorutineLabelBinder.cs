@@ -32,15 +32,6 @@ namespace CorutBackworker.Corutines
                     label.Text = string.Format(pattern, repotext.message);
                 });
             }
-            if (report is CorutineReportResult)
-            {
-                CorutineReportResult res = report as CorutineReportResult;
-                Label label = control as Label;
-                label.Invoke((MethodInvoker)delegate()
-                {
-                    label.Text = string.Format(pattern, res.result.ToString());
-                });
-            }
         }
     }
 }
