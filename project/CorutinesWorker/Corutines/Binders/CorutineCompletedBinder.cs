@@ -11,7 +11,7 @@ namespace CorutBackworker.Corutines
     /// <summary>
     /// Binder for completed event
     /// </summary>
-    class CorutineCompletedBinder : CorutineWinformsBinder
+    public class CorutineCompletedBinder : CorutineWinformsBinder
     {
         public delegate void CompletedHandler(object result);
         public CompletedHandler handler;

@@ -10,7 +10,7 @@ namespace CorutBackworker.Corutines
     /// <summary>
     /// Base class of corutine
     /// </summary>
-    abstract class CorutineBase
+    public abstract class CorutineBase
     {
         /// <summary>
         /// Ienumerable - corutine

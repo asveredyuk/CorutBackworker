@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace CorutBackworker.Corutines
 {
-    class Corutine : CorutineBase
+    public  class Corutine : CorutineBase
     {
         protected Control context;
         public Corutine(Control _context, IEnumerable<CorutineReport> corut):base(corut)

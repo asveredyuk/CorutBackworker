@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorutBackworker", "CorutBackworker\CorutBackworker.csproj", "{534EF926-3760-427C-8DED-CE1B307F8C32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorutinesWorker", "CorutinesWorker\CorutinesWorker.csproj", "{4E5DACD8-9554-4BA1-A41E-592234D6FBF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{534EF926-3760-427C-8DED-CE1B307F8C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{534EF926-3760-427C-8DED-CE1B307F8C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{534EF926-3760-427C-8DED-CE1B307F8C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5DACD8-9554-4BA1-A41E-592234D6FBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5DACD8-9554-4BA1-A41E-592234D6FBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5DACD8-9554-4BA1-A41E-592234D6FBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5DACD8-9554-4BA1-A41E-592234D6FBF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

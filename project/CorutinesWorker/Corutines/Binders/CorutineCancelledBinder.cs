@@ -10,7 +10,7 @@ namespace CorutBackworker.Corutines
     /// <summary>
     /// Binder for cancelled event
     /// </summary>
-    class CorutineCancelledBinder : CorutineWinformsBinder
+    public class CorutineCancelledBinder : CorutineWinformsBinder
     {
         public delegate void CancelHandler();
         public CancelHandler handler;

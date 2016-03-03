@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CorutBackworker.Corutines
 {
-    interface ICorutineBinder
+    public interface ICorutineBinder
     {
         /// <summary>
         /// Called when report from corutine got
