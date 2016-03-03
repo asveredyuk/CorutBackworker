@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
     /// <summary>
     /// Int-percentage result report
@@ -16,5 +16,10 @@ namespace CorutBackworker.Corutines
         {
             percentage = perc;
         }
+        public CorutineReportPercentage(int done, int total)
+        {
+            percentage = done * 100 / total;
+        }
+        
     }
 }

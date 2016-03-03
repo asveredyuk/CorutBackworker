@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
     public  class Corutine : CorutineBase
     {
@@ -19,9 +19,13 @@ namespace CorutBackworker.Corutines
         {
             binders.Add(new CorutineProgressbarBinder(bar));
         }
-        public void BindLabel(Label label)
+        public void BindText(Control c)
         {
-            binders.Add(new CorutineLabelBinder(label));
+            binders.Add(new CorutineTextBinder(c));
+        }
+        public void BindProgressText(Control c)
+        {
+            binders.Add(new CorutineProgressTextBinder(c));
         }
         public void OnCompleted(CorutineCompletedBinder.CompletedHandler handler)
         {

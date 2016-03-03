@@ -5,31 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
-    public class CorutineLabelBinder : CorutineWinformsBinder
+    public class CorutineTextBinder : CorutineWinformsBinder
     {
-        readonly string pattern;
-        readonly string defaultValue;
-        public CorutineLabelBinder(Label label, string _pattern = "{0}", string _defVal = "") : base(label)
+        protected readonly string pattern;
+        protected readonly string defaultValue;
+        public CorutineTextBinder(Control control, string _pattern = "{0}", string _defVal = "") : base(control)
         {
             pattern = _pattern;
             defaultValue = _defVal;
         }
         public override void Init()
         {
-            Label label = control as Label;
-            label.Text = string.Format(pattern, defaultValue);
+            control.Text = string.Format(pattern, defaultValue);
         }
         public override void OnReport(CorutineReport report)
         {
             if(report is CorutineReportText)
             {
                 CorutineReportText repotext = report as CorutineReportText;
-                Label label = control as Label;
-                label.Invoke((MethodInvoker)delegate()
+                //Label label = control as Label;
+                control.Invoke((MethodInvoker)delegate()
                 {
-                    label.Text = string.Format(pattern, repotext.message);
+                    control.Text = string.Format(pattern, repotext.message);
                 });
             }
         }

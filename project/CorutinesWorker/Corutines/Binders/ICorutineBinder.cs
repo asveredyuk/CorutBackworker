@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
     public interface ICorutineBinder
     {

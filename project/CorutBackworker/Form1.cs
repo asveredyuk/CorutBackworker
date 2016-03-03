@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CorutBackworker.Corutines;
+using CorutinesWorker.Corutines;
+using CorutinesWorker;
 namespace CorutBackworker
 {
     public partial class Form1 : Form
@@ -22,8 +23,9 @@ namespace CorutBackworker
             corut = new Corutine(this, dumbCorut(2, 100000));
             //corut.binders.Add(new CorutineProgressbarBinder(progressBar1));
             //corut.binders.Add(new CorutineLabelBinder(label1));
-            corut.BindLabel(label1);
-            corut.BindProgressBar(progressBar1);
+            /*corut.BindLabel(label1);
+            corut.BindProgressBar(progressBar1);*/
+            SimpleProgressForm form = new SimpleProgressForm(corut);
             corut.OnCompleted(delegate(object result)
             {
                 List<int> results = result as List<int>;
@@ -33,7 +35,7 @@ namespace CorutBackworker
             {
                 MessageBox.Show("process cancelled");
             });
-            corut.Start();
+            form.Start();
         }
         /// <summary>
         /// Dumb algorithm to find simple numbers
@@ -52,7 +54,7 @@ namespace CorutBackworker
                 int len = to - from;
                 int progress = (i - from)*100 / len;
                 yield return new CorutineReportPercentage(progress);
-                yield return new CorutineReportText(string.Format("{0}% completed", progress));
+                yield return new CorutineReportText(string.Format("Found: {0}", results.Count));
             }
             yield return new CorutineReportResult(results);
         }

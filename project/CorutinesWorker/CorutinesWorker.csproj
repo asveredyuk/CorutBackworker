@@ -44,9 +44,10 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Corutines\Binders\CorutineCancelledBinder.cs" />
     <Compile Include="Corutines\Binders\CorutineCompletedBinder.cs" />
-    <Compile Include="Corutines\Binders\CorutineLabelBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineTextBinder.cs" />
     <Compile Include="Corutines\Binders\CorutineProgressbarBinder.cs" />
     <Compile Include="Corutines\Binders\CorutineWinformsBinder.cs" />
+    <Compile Include="Corutines\Binders\CorutineProgressTextBinder.cs" />
     <Compile Include="Corutines\Binders\ICorutineBinder.cs" />
     <Compile Include="Corutines\Corutine.cs" />
     <Compile Include="Corutines\CorutineBase.cs" />
@@ -56,6 +57,17 @@
     <Compile Include="Corutines\reports\CorutineReportResult.cs" />
     <Compile Include="Corutines\reports\CorutineReportText.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimpleProgressForm.Designer.cs">
+      <DependentUpon>SimpleProgressForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SimpleProgressForm.resx">
+      <DependentUpon>SimpleProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

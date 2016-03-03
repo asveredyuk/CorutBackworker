@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
     /// <summary>
     /// Base class of corutine
@@ -28,6 +28,16 @@ namespace CorutBackworker.Corutines
         /// List of all binders
         /// </summary>
         public List<ICorutineBinder> binders;
+        /// <summary>
+        /// Is corutine now active
+        /// </summary>
+        public bool IsWorking
+        {
+            get
+            {
+                return thread != null && thread.IsAlive;
+            }
+        }
 
         public CorutineBase(IEnumerable<CorutineReport> rep)
         {

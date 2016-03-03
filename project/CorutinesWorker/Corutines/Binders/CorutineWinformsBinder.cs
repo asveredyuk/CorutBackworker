@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace CorutBackworker.Corutines
+namespace CorutinesWorker.Corutines
 {
     public abstract class CorutineWinformsBinder : ICorutineBinder
     {
