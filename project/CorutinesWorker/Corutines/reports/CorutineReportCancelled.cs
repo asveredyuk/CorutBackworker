@@ -9,7 +9,7 @@ namespace CorutinesWorker.Corutines
     /// <summary>
     /// Report given if corutine was cancelled
     /// </summary>
-    public class CorutineReportCancelled : CorutineReport
+    public sealed class CorutineReportCancelled : CorutineReport
     {
         //nothing to implement
     }

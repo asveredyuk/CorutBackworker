@@ -25,8 +25,8 @@ namespace CorutinesWorker
         public TextBindRole titleBindRole = TextBindRole.None;
         public TextBindRole labelBindRole = TextBindRole.Progress;
         public string title = "Progress";
-        private Corutine corutine;
-        public SimpleProgressForm(Corutine corut)
+        private ICorutineWinforms corutine;
+        public SimpleProgressForm(ICorutineWinforms corut)
         {
             InitializeComponent();
             corutine = corut;

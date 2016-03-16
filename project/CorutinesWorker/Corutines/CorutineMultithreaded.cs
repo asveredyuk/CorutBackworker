@@ -7,10 +7,11 @@ using System.Windows.Forms;
 
 namespace CorutinesWorker.Corutines
 {
-    public class Corutine : CorutineBase, ICorutineWinforms
+    public class CorutineMultithreaded : CorutineMultithreadedBase, ICorutineWinforms
     {
         protected Control context;
-        public Corutine(Control _context, IEnumerable<CorutineReport> corut):base(corut)
+        public CorutineMultithreaded(Control _context, IEnumerable<CorutineReport>[] coruts)
+            : base(coruts)
         {
             context = _context;
         }

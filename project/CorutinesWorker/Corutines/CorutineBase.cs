@@ -10,7 +10,7 @@ namespace CorutinesWorker.Corutines
     /// <summary>
     /// Base class of corutine
     /// </summary>
-    public abstract class CorutineBase
+    public abstract class CorutineBase : ICorutine
     {
         /// <summary>
         /// Ienumerable - corutine
@@ -19,7 +19,7 @@ namespace CorutinesWorker.Corutines
         /// <summary>
         /// Is corutine under cancellation
         /// </summary>
-        private bool cancel;
+        protected bool cancel;
         /// <summary>
         /// Thread, running in background
         /// </summary>
@@ -31,7 +31,7 @@ namespace CorutinesWorker.Corutines
         /// <summary>
         /// Is corutine now active
         /// </summary>
-        public bool IsWorking
+        public virtual bool IsWorking
         {
             get
             {
@@ -39,10 +39,24 @@ namespace CorutinesWorker.Corutines
             }
         }
 
-        public CorutineBase(IEnumerable<CorutineReport> rep)
+        public virtual bool HasStarted
+        {
+            get { return thread != null; }
+        }
+
+        protected void SetIenumerable(IEnumerable<CorutineReport> rep)
+        {
+            if(HasStarted)
+                throw new Exception("corutine has already started");
+            corut = rep;
+        }
+        protected CorutineBase()
+        {
+            binders = new List<ICorutineBinder>();
+        }
+        protected CorutineBase(IEnumerable<CorutineReport> rep):this()
         {
             corut = rep;
-            binders = new List<ICorutineBinder>();
         }
         /// <summary>
         /// Cancel execution

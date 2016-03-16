@@ -9,7 +9,7 @@ namespace CorutinesWorker.Corutines
     /// <summary>
     /// Int-percentage result report
     /// </summary>
-    public class CorutineReportPercentage : CorutineReport
+    public sealed class CorutineReportPercentage : CorutineReport
     {
         public readonly int percentage;
         public CorutineReportPercentage(int perc)

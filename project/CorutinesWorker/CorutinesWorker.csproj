@@ -51,6 +51,10 @@
     <Compile Include="Corutines\Binders\ICorutineBinder.cs" />
     <Compile Include="Corutines\Corutine.cs" />
     <Compile Include="Corutines\CorutineBase.cs" />
+    <Compile Include="Corutines\CorutineMultithreaded.cs" />
+    <Compile Include="Corutines\CorutineMultithreadedBase.cs" />
+    <Compile Include="Corutines\ICorutine.cs" />
+    <Compile Include="Corutines\ICorutineWinforms.cs" />
     <Compile Include="Corutines\reports\CorutineReport.cs" />
     <Compile Include="Corutines\reports\CorutineReportCancelled.cs" />
     <Compile Include="Corutines\reports\CorutineReportPercentage.cs" />
