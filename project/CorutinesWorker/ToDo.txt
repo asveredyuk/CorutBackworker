@@ -1,0 +1,2 @@
+﻿- add safity to corutine (i.e. evaluating in try/catch)
+- more logics, like stopping if result got, etc
